@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useScroll } from '@react-three/drei'
 import GameCard from './GameCard'
 import type { RouteType } from '../App'
 
@@ -8,8 +7,6 @@ interface LandingOverlayProps {
 }
 
 export default function LandingOverlay({ onNavigate }: LandingOverlayProps) {
-  const scroll = useScroll();
-
   return (
     <div className="w-full text-white font-sans pointer-events-none selection:bg-[#9d00ff] selection:text-white">
       {/* PAGE 1: Hero */}
