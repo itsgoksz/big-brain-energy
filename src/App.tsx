@@ -1,11 +1,21 @@
 import { Canvas } from '@react-three/fiber'
-import { ScrollControls, Scroll } from '@react-three/drei'
-import { Suspense, useState } from 'react'
+import { ScrollControls, Scroll, useScroll } from '@react-three/drei'
+import { Suspense, useState, useEffect } from 'react'
 import NeuralCore from './components/NeuralCore'
 import LandingOverlay from './components/LandingOverlay'
 import WordRushOverlay from './components/WordRushOverlay'
 
 export type RouteType = 'home' | 'word-rush'
+
+function ScrollResetter({ route }: { route: string }) {
+  const scroll = useScroll();
+  useEffect(() => {
+    if (scroll.el) {
+      scroll.el.scrollTop = 0;
+    }
+  }, [route, scroll]);
+  return null;
+}
 
 function App() {
   const [route, setRoute] = useState<RouteType>('home')
@@ -21,7 +31,8 @@ function App() {
       >
         <color attach="background" args={['#050505']} />
         <Suspense fallback={null}>
-          <ScrollControls pages={5} damping={0.1}>
+          <ScrollControls pages={route === 'home' ? 5 : 1} damping={0.1}>
+            <ScrollResetter route={route} />
             
             {/* The 3D WebGL Scene */}
             <NeuralCore />
