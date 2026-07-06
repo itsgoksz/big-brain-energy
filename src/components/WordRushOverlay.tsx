@@ -11,7 +11,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
     <div className="w-full h-screen text-white font-sans overflow-y-auto selection:bg-[#00f0ff] selection:text-white pb-20 pointer-events-auto">
       <div className="max-w-5xl mx-auto px-8 pt-12">
         {/* Back Button */}
-        <button 
+        <button
           onClick={() => onNavigate('home')}
           className="inline-flex items-center text-white/50 hover:text-[#00f0ff] transition-colors mb-12 uppercase tracking-widest text-sm"
         >
@@ -35,8 +35,8 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
             A fast-paced, real-time multiplayer word game that blends strategic thinking, expansive vocabulary, and lightning-fast reflexes.
           </p>
 
-          <a 
-            href="https://wordrush.bigbrainenergy.com"
+          <a
+            href="https://wordrush.bigbrainenergy.xyz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-10 py-5 bg-[#00f0ff] text-black font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 rounded-full"
@@ -49,7 +49,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -73,7 +73,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
