@@ -36,7 +36,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
           </p>
 
           <a 
-            href="http://localhost:5173"
+            href="https://wordrush.bigbrainenergy.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-10 py-5 bg-[#00f0ff] text-black font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 rounded-full"
