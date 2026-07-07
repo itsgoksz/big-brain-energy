@@ -69,7 +69,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
           >
             <h3 className="text-xl font-heading font-bold mb-4 text-[#9d00ff]">The 60-Second Dash</h3>
             <p className="text-white/60 leading-relaxed">
-              You have just 60 seconds to construct and type a valid English word matching the constraints. Think fast or lose your streak.
+              You have just 30 seconds to construct and type a valid English word matching the constraints. Think fast or lose your streak.
             </p>
           </motion.div>
 
