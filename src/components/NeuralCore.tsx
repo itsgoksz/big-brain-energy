@@ -192,23 +192,23 @@ export default function NeuralCore() {
   useFrame((state, delta) => {
     if (materialRef.current && lineMaterialRef.current) {
       const time = materialRef.current.uniforms.uTime.value + delta;
+      const shaderScroll = scroll.pages === 1 ? 0 : scroll.offset;
       
       materialRef.current.uniforms.uTime.value = time;
-      materialRef.current.uniforms.uScrollProgress.value = scroll.offset;
+      materialRef.current.uniforms.uScrollProgress.value = shaderScroll;
       materialRef.current.uniforms.uMouse.value.lerp(
         mousePos.set(state.pointer.x, state.pointer.y),
         0.1
       );
       
       lineMaterialRef.current.uniforms.uTime.value = time;
-      lineMaterialRef.current.uniforms.uScrollProgress.value = scroll.offset;
+      lineMaterialRef.current.uniforms.uScrollProgress.value = shaderScroll;
       lineMaterialRef.current.uniforms.uMouse.value.copy(materialRef.current.uniforms.uMouse.value);
     }
     
     if (pointsRef.current && linesRef.current) {
-      // Clamp to 0 to prevent Mac trackpad overscroll (rubber-banding) from producing negative numbers.
-      // Math.pow(negative, fractional) returns NaN, which breaks the Three.js matrix and causes the screen to flash blank!
-      const scrollOffset = Math.max(0, scroll.offset); 
+      // If pages === 1 (like on the Word Rush page), disable scrolling so overscroll bounce doesn't move the brain.
+      const scrollOffset = scroll.pages === 1 ? 0 : Math.max(0, scroll.offset); 
       
       // CHRISTOPHER NOLAN CINEMATIC JOURNEY
       // 1. MACRO TO MICRO ZOOM

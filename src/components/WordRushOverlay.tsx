@@ -67,7 +67,7 @@ export default function WordRushOverlay({ onNavigate }: WordRushOverlayProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="p-8 rounded-xl border border-[#9d00ff]/30 bg-black/40 backdrop-blur-md"
           >
-            <h3 className="text-xl font-heading font-bold mb-4 text-[#9d00ff]">The 60-Second Dash</h3>
+            <h3 className="text-xl font-heading font-bold mb-4 text-[#9d00ff]">The 30-Second Dash</h3>
             <p className="text-white/60 leading-relaxed">
               You have just 30 seconds to construct and type a valid English word matching the constraints. Think fast or lose your streak.
             </p>
