@@ -4,8 +4,9 @@ import { Suspense, useState, useEffect } from 'react'
 import NeuralCore from './components/NeuralCore'
 import LandingOverlay from './components/LandingOverlay'
 import WordRushOverlay from './components/WordRushOverlay'
+import LakeDriftOverlay from './components/LakeDriftOverlay'
 
-export type RouteType = 'home' | 'word-rush'
+export type RouteType = 'home' | 'word-rush' | 'lake-drift'
 
 function ScrollResetter({ route }: { route: string }) {
   const scroll = useScroll();
@@ -39,11 +40,9 @@ function App() {
 
             {/* The DOM Overlay Layer */}
             <Scroll html style={{ width: '100%', height: '100%' }}>
-              {route === 'home' ? (
-                <LandingOverlay onNavigate={setRoute} />
-              ) : (
-                <WordRushOverlay onNavigate={setRoute} />
-              )}
+              {route === 'home' && <LandingOverlay onNavigate={setRoute} />}
+              {route === 'word-rush' && <WordRushOverlay onNavigate={setRoute} />}
+              {route === 'lake-drift' && <LakeDriftOverlay onNavigate={setRoute} />}
             </Scroll>
 
           </ScrollControls>

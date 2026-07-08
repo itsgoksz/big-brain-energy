@@ -81,7 +81,7 @@ export default function LandingOverlay({ onNavigate }: LandingOverlayProps) {
         </motion.h3>
         <div className="flex gap-8 flex-wrap justify-center px-4">
           <GameCard title="WORD RUSH" status="Multiplayer Word Game" color="#00f0ff" link="word-rush" onNavigate={onNavigate} />
-          <GameCard title="LAKE DRIFT" status="Dark Theme Boat Shooter" color="#39ff14" />
+          <GameCard title="LAKE DRIFT" status="Dark Theme Boat Shooter" color="#39ff14" link="lake-drift" onNavigate={onNavigate} />
         </div>
       </section>
 
