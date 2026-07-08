@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
-import { ScrollControls, Scroll, useScroll } from '@react-three/drei'
-import { Suspense, useState, useEffect } from 'react'
+import { ScrollControls, Scroll, Html } from '@react-three/drei'
+import { Suspense, useState } from 'react'
 import NeuralCore from './components/NeuralCore'
 import LandingOverlay from './components/LandingOverlay'
 import WordRushOverlay from './components/WordRushOverlay'
@@ -8,15 +8,7 @@ import LakeDriftOverlay from './components/LakeDriftOverlay'
 
 export type RouteType = 'home' | 'word-rush' | 'lake-drift'
 
-function ScrollResetter({ route }: { route: string }) {
-  const scroll = useScroll();
-  useEffect(() => {
-    if (scroll.el) {
-      scroll.el.scrollTop = 0;
-    }
-  }, [route, scroll]);
-  return null;
-}
+
 
 function App() {
   const [route, setRoute] = useState<RouteType>('home')
@@ -32,8 +24,7 @@ function App() {
       >
         <color attach="background" args={['#050505']} />
         <Suspense fallback={null}>
-          <ScrollControls pages={route === 'home' ? 5 : 1} damping={0.1}>
-            <ScrollResetter route={route} />
+          <ScrollControls pages={5} damping={0.1}>
             
             {/* The 3D WebGL Scene */}
             <NeuralCore />
@@ -41,13 +32,23 @@ function App() {
             {/* The DOM Overlay Layer */}
             <Scroll html style={{ width: '100%', height: '100%' }}>
               {route === 'home' && <LandingOverlay onNavigate={setRoute} />}
-              {route === 'word-rush' && <WordRushOverlay onNavigate={setRoute} />}
-              {route === 'lake-drift' && <LakeDriftOverlay onNavigate={setRoute} />}
             </Scroll>
 
           </ScrollControls>
         </Suspense>
       </Canvas>
+
+      {/* Un-transformed Static Pages Rendered OUTSIDE the 3D Canvas */}
+      {route === 'word-rush' && (
+        <div className="absolute inset-0 z-50 pointer-events-auto">
+          <WordRushOverlay onNavigate={setRoute} />
+        </div>
+      )}
+      {route === 'lake-drift' && (
+        <div className="absolute inset-0 z-50 pointer-events-auto">
+          <LakeDriftOverlay onNavigate={setRoute} />
+        </div>
+      )}
     </div>
   )
 }
