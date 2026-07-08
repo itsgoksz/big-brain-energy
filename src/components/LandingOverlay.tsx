@@ -85,9 +85,9 @@ export default function LandingOverlay({ onNavigate }: LandingOverlayProps) {
         </div>
       </section>
 
-      {/* PAGE 5: Footer */}
-      <section className="w-full mt-32 pointer-events-auto">
-        <div className="w-full pt-20 pb-12 px-8 flex flex-col items-center gap-8 text-center bg-black/60 backdrop-blur-lg border-t border-white/20" style={{ boxShadow: '0 -20px 40px rgba(0,0,0,0.5)' }}>
+      {/* PAGE 4.5: Footer (Exactly 50vh to match pages={4.5}) */}
+      <section className="h-[50vh] w-full flex flex-col justify-end pointer-events-auto">
+        <div className="w-full pt-16 pb-10 px-8 flex flex-col items-center gap-8 text-center bg-black/60 backdrop-blur-lg border-t border-white/20" style={{ boxShadow: '0 -20px 40px rgba(0,0,0,0.5)' }}>
           
           {/* Main Brand */}
           <div className="font-heading text-4xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-[#9d00ff] drop-shadow-lg">

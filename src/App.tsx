@@ -24,7 +24,7 @@ function App() {
       >
         <color attach="background" args={['#050505']} />
         <Suspense fallback={null}>
-          <ScrollControls pages={4.8} damping={0.1}>
+          <ScrollControls pages={4.5} damping={0.1}>
             
             {/* The 3D WebGL Scene */}
             <NeuralCore />
