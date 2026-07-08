@@ -86,7 +86,7 @@ export default function LandingOverlay({ onNavigate }: LandingOverlayProps) {
       </section>
 
       {/* PAGE 5: Footer */}
-      <section className="min-h-screen w-full flex flex-col items-center justify-end pointer-events-auto">
+      <section className="w-full mt-32 pointer-events-auto">
         <div className="w-full pt-20 pb-12 px-8 flex flex-col items-center gap-8 text-center bg-black/60 backdrop-blur-lg border-t border-white/20" style={{ boxShadow: '0 -20px 40px rgba(0,0,0,0.5)' }}>
           
           {/* Main Brand */}
@@ -101,7 +101,7 @@ export default function LandingOverlay({ onNavigate }: LandingOverlayProps) {
             <a href="#" className="hover:text-[#39ff14] transition-colors">CAREERS</a>
             <span className="hidden md:inline text-white/40">|</span>
             <span className="hover:text-white transition-colors cursor-pointer" onClick={() => onNavigate('word-rush')}>WORD RUSH</span>
-            <span className="hover:text-white transition-colors cursor-pointer">LAKE DRIFT</span>
+            <span className="hover:text-white transition-colors cursor-pointer" onClick={() => onNavigate('lake-drift')}>LAKE DRIFT</span>
           </div>
 
           {/* Divider */}

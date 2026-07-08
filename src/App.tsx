@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { ScrollControls, Scroll, Html } from '@react-three/drei'
+import { ScrollControls, Scroll } from '@react-three/drei'
 import { Suspense, useState } from 'react'
 import NeuralCore from './components/NeuralCore'
 import LandingOverlay from './components/LandingOverlay'
@@ -24,7 +24,7 @@ function App() {
       >
         <color attach="background" args={['#050505']} />
         <Suspense fallback={null}>
-          <ScrollControls pages={5} damping={0.1}>
+          <ScrollControls pages={4.8} damping={0.1}>
             
             {/* The 3D WebGL Scene */}
             <NeuralCore />
